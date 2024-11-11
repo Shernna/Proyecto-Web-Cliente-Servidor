@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Proyecto</title>
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<div class="barra">
+			<a href="./paginaInicio.html">Inicio</a>
+			<a href="./Buscar.html">Buscar médicos</a>
+			<div style="float:right;">
+				<a class="active" href="./IniciarSesion.html">Iniciar Sesión / Registrarse</a>
+			</div>
+		</div>
+		<div class="container">
+			<h1>Registrarse</h1>
+			<p>Por favor llenar la información para registrarse.</p>
+			<hr>
+
+			<label for="email"><b>Correo</b></label>
+			<input type="text" placeholder="Ingrese el correo" name="email" required>
+
+			<label for="psw"><b>Contraseña</b></label>
+			<input type="password" placeholder="Ingrese la contraseña" name="psw" required>
+
+			<label for="psw-repeat"><b>Repita la contraseña</b></label>
+			<input type="password" placeholder="Repita la contraseña" name="psw-repeat" required>
+
+			<div class="clearfix">
+			  <button type="button" class="cancelbtn" onclick="Volver()">Cancelar</button>
+			  <button type="submit" class="signupbtn">Registrarse</button>
+			</div>
+	  </div>
+		<script src="./js/script.js"></script>
+	</body>
+</html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Proyecto</title>
-		<link rel="stylesheet" href="./css/style.css">
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Buscar Médicos</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
 	<div class="barra">
 		<a href="./paginaInicio.html">Inicio</a>
 		<a class="active" href="./Buscar.html">Buscar</a>
@@ -14,5 +14,43 @@
 			<a href="./IniciarSesion.html">Iniciar Sesión / Registrarse</a>
 		</div>
 	</div>
-	</body>
+
+
+	<h2>Búsqueda de Médicos y Especialidades</h2>
+	<p>Utiliza los filtros a continuación para encontrar médicos por especialidad y ubicación.</p>
+
+
+	<form id="busquedaForm" onsubmit="Buscar(event)">
+		<label for="especialidad">Especialidad:</label>
+		<select id="especialidad" name="especialidad" required>
+			<option value="">Seleccione una especialidad</option>
+			<option value="cardiologia">Cardiología</option>
+			<option value="dermatologia">Dermatología</option>
+			<option value="pediatria">Pediatría</option>
+			<option value="psicologia">Psicología</option>
+		</select>
+
+		<label for="ubicacion">Ubicación:</label>
+		<select id="ubicacion" name="ubicacion" required>
+			<option value="">Seleccione una ubicación</option>
+			<option value="san_jose">San José</option>
+			<option value="heredia">Heredia</option>
+			<option value="alajuela">Alajuela</option>
+			<option value="cartago">Cartago</option>
+		</select>
+
+		<button type="submit">Buscar</button>
+	</form>
+
+
+	<div id="resultados">
+		<h3>Resultados</h3>
+		<div id="listaMedicos">
+
+		</div>
+	</div>
+
+
+	<script src="./js/script.js"></script>
+</body>
 </html>

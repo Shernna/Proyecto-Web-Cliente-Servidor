@@ -5,10 +5,10 @@ function Volver()
 
 const medicos = [
     { nombre: "Dr. Adrian Rojas", especialidad: "dermatologia", ubicacion: "san_jose" },
-    { nombre: "Dra. Rachel C�rtes", especialidad: "odontologia", ubicacion: "heredia" },
+    { nombre: "Dra. Rachel Cortes", especialidad: "odontologia", ubicacion: "heredia" },
     { nombre: "Dr. Alejandro Arguedas", especialidad: "pediatria", ubicacion: "alajuela" },
     { nombre: "Dra. Shernna Corrales", especialidad: "psicologia", ubicacion: "cartago" },
-    { nombre: "Dr. Luis Mart�nez", especialidad: "cardiologia", ubicacion: "cartago" },
+    { nombre: "Dr. Luis Martinez", especialidad: "cardiologia", ubicacion: "cartago" },
 ];
 
 

@@ -5,10 +5,10 @@ function Volver()
 
 const medicos = [
     { nombre: "Dr. Adrian Rojas", especialidad: "dermatologia", ubicacion: "san_jose" },
-    { nombre: "Dra. Rachel Córtes", especialidad: "odontologia", ubicacion: "heredia" },
+    { nombre: "Dra. Rachel Cï¿½rtes", especialidad: "odontologia", ubicacion: "heredia" },
     { nombre: "Dr. Alejandro Arguedas", especialidad: "pediatria", ubicacion: "alajuela" },
     { nombre: "Dra. Shernna Corrales", especialidad: "psicologia", ubicacion: "cartago" },
-    { nombre: "Dr. Luis Martínez", especialidad: "cardiologia", ubicacion: "cartago" },
+    { nombre: "Dr. Luis Martï¿½nez", especialidad: "cardiologia", ubicacion: "cartago" },
 ];
 
 
@@ -40,4 +40,31 @@ function Buscar(event) {
     } else {
         listaMedicos.innerHTML = "<p>No se encontraron medicos que coincidan con los criterios seleccionados.</p>";
     }
+}
+
+function mostrarResumen(event) {
+
+    event.preventDefault();
+
+    const identificacion = document.getElementById('identificacion').value;
+    const nombre = document.getElementById('nombre').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const edad = document.getElementById('edad').value;
+    const fecha = document.getElementById('fecha').value;
+
+    const resumen = `
+        <strong>IdentificaciÃ³n:</strong> ${identificacion}<br>
+        <strong>Nombre:</strong> ${nombre}<br>
+        <strong>Apellidos:</strong> ${apellidos}<br>
+        <strong>Edad:</strong> ${edad}<br>
+        <strong>Fecha de la Cita:</strong> ${fecha}
+    `;
+
+    document.getElementById('resumenCita').innerHTML = resumen;
+    document.getElementById('resumenModal').style.display = 'block';
+}
+
+function cerrarModal() {
+    document.getElementById('resumenModal').style.display = 'none';
+    document.getElementById('citaForm').reset();
 }

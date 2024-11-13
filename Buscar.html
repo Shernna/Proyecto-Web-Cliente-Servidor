@@ -4,55 +4,85 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Buscar Médicos</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-	<div class="barra">
-		<a href="./paginaInicio.html">Inicio</a>
-		<a class="active" href="./Buscar.html">Buscar</a>
-		<a href="./Agendar.html">Agendar Citas</a>
-		<a href="./Contacto.html">Contactanos</a>
-		<div style="float:right;">
-			<a href="./IniciarSesion.html">Iniciar Sesión / Registrarse</a>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="./paginaInicio.html">Citas Médicas</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="./paginaInicio.html">Inicio</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="./Buscar.html">Buscar médicos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./Agendar.html">Agendar Citas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./Contacto.html">Contáctanos</a>
+				</li>
+			</ul>
+			<a href="./IniciarSesion.html" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
+		</div>
+	</nav>
+
+
+	<div class="container mt-5">
+		<h2 class="text-center mb-4">Búsqueda de Médicos y Especialidades</h2>
+		<p class="text-center mb-5">Utiliza los filtros a continuación para encontrar médicos por especialidad y ubicación.</p>
+
+
+		<form id="busquedaForm" class="bg-light p-4 rounded shadow-sm" onsubmit="Buscar(event)">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="especialidad">Especialidad</label>
+					<select id="especialidad" name="especialidad" class="form-control" required>
+						<option value="">Seleccione una especialidad</option>
+						<option value="cardiologia">Cardiología</option>
+						<option value="dermatologia">Dermatología</option>
+						<option value="pediatria">Pediatría</option>
+						<option value="psicologia">Psicología</option>
+					</select>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="ubicacion">Ubicación</label>
+					<select id="ubicacion" name="ubicacion" class="form-control" required>
+						<option value="">Seleccione una ubicación</option>
+						<option value="san_jose">San José</option>
+						<option value="heredia">Heredia</option>
+						<option value="alajuela">Alajuela</option>
+						<option value="cartago">Cartago</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">Buscar</button>
+		</form>
+	</div>
+
+	<div class="container mt-5">
+		<h3 class="text-center">Resultados</h3>
+		<div id="resultados" class="bg-white p-4 rounded shadow-sm mt-3">
+			<div id="listaMedicos" class="row">
+
+			</div>
 		</div>
 	</div>
 
-
-	<h2>Búsqueda de Médicos y Especialidades</h2>
-	<p>Utiliza los filtros a continuación para encontrar médicos por especialidad y ubicación.</p>
-
-
-	<form id="busquedaForm" onsubmit="Buscar(event)">
-		<label for="especialidad">Especialidad:</label>
-		<select id="especialidad" name="especialidad" required>
-			<option value="">Seleccione una especialidad</option>
-			<option value="cardiologia">Cardiología</option>
-			<option value="dermatologia">Dermatología</option>
-			<option value="pediatria">Pediatría</option>
-			<option value="psicologia">Psicología</option>
-		</select>
-
-		<label for="ubicacion">Ubicación:</label>
-		<select id="ubicacion" name="ubicacion" required>
-			<option value="">Seleccione una ubicación</option>
-			<option value="san_jose">San José</option>
-			<option value="heredia">Heredia</option>
-			<option value="alajuela">Alajuela</option>
-			<option value="cartago">Cartago</option>
-		</select>
-
-		<button type="submit">Buscar</button>
-	</form>
+	<footer class="text-center">
+		<p>&copy; 2024 Citas Médicas. Todos los derechos reservados.</p>
+	</footer>
 
 
-	<div id="resultados">
-		<h3>Resultados</h3>
-		<div id="listaMedicos">
-
-		</div>
-	</div>
-
-
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="./js/script.js"></script>
 </body>
 </html>

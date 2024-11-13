@@ -1,112 +1,235 @@
-.barra {
-  background-color: #333;
-  overflow: hidden;
+
+.navbar {
+    font-size: 1rem;
 }
 
-.barra {
-  background-color: #333;
-  overflow: hidden;
+.navbar-brand {
+    font-weight: bold;
 }
 
-.barra a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.nav-link {
+    color: #f2f2f2;
 }
 
-.barra a:hover {
-  background-color: #ddd;
-  color: black;
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #ffffff;
 }
 
-.barra a.active {
-  background-color: #4CAF50;
-  color: white;
+    .navbar-nav .nav-link.active {
+        color: #f8f9fa;
+        background-color: #007bff;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+    .nav-link:hover,
+    .navbar-nav .nav-link:hover {
+        color: #4CAF50;
+        background-color: #e9ecef;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+
+.navbar .btn-outline-light {
+    font-weight: bold;
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
-.barra div {
-  float: right;
+    .navbar .btn-outline-light:hover {
+        background-color: #ffffff;
+        color: #007bff;
+        border-color: #007bff;
+    }
 
+
+.jumbotron {
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+    .jumbotron h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .jumbotron p {
+        font-size: 1.2rem;
+    }
+
+
+.container h4 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+.container p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.container img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+    .container img:hover {
+        transform: scale(1.1);
+    }
+
+
+#contenedorTitulo {
+    background-color: #5b97f1;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
 }
 
 
-input[type=text],
-input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+#contenedorMedico {
+    background-color: #fafcff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid #d1e3fd;
 }
+
+
+.columna {
+    text-align: center;
+    margin-top: 15px;
+}
+
+    .columna a {
+        display: inline-block;
+        background-color: #5b97f1;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .columna a:hover {
+            background-color: #3d7cca;
+        }
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
 
 button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
 }
 
-button:hover {
-  opacity: 0.8;
-}
+    button:hover {
+        opacity: 0.8;
+    }
 
 .cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
+    background-color: #f44336;
 }
 
-.cancelbtn,
-.signupbtn {
-  float: left;
-  width: 50%;
-}
 
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-}
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.admin-section {
-  border: 1px solid #ddd;
-  margin: 10px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  background-color: #f9f9f9;
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
 }
-footer {
-  margin-top: 20px;
-  padding: 10px 0;
-  background-color: #333;
-  color: white;
-  text-align: center;
+
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #f2f2f2;
+}
+
+
+h2, h3 {
+    color: #343a40;
+    text-align: center;
+}
+
+
+#busquedaForm {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+    #busquedaForm label {
+        font-weight: bold;
+    }
+
+    #busquedaForm button {
+        font-size: 16px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        #busquedaForm button:hover {
+            background-color: #0056b3;
+        }
+
+
+#resultados {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+#listaMedicos .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px;
 }

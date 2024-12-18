@@ -1,3 +1,7 @@
+<?php
+include("barranav.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,19 +18,7 @@
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #343a40;">
-            <a class="navbar-brand" href="./paginaInicio.html">Citas Médicas</a>
-            <div class="navbar-nav">
-                <a class="nav-link" href="./paginaInicio.html">Inicio</a>
-                <a class="nav-link" href="./Buscar.html">Buscar</a>
-                <a class="nav-link active" href="./Agendar.html">Agendar Citas</a>
-                <a class="nav-link" href="./Contacto.html">Contáctanos</a>
-                <a class="btn btn-outline-light" href="./IniciarSesion.html" style="float: right;">Iniciar Sesión / Registrarse</a>
-            </div>
-        </nav>
-    </header>
-
+    
     <div class="container mt-4">
         <form id="citaForm" onsubmit="mostrarResumen(event)">
             <div class="mb-3">
@@ -76,9 +68,8 @@
         </div>
     </div>
 
-    <footer class="text-center">
-        <p>&copy; 2024 Citas Médicas. Todos los derechos reservados.</p>
-    </footer>
+    <?php include("footer.php") ?>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

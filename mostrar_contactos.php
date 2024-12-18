@@ -1,3 +1,7 @@
+<?php
+include("barranav.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,7 +37,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include 'conexion.php'; // Asumiendo que tu archivo de conexión se llama 'conexion.php'
+                                include 'conexion.php'; 
                                 $sql = "SELECT * FROM contacto";
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
@@ -80,6 +84,7 @@
             </div>
         </div>
     </div>
+    <?php include("footer.php") ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

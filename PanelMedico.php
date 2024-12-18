@@ -1,3 +1,7 @@
+
+<?php
+include("barranav.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,37 +18,16 @@
 
 <body>
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="./paginaInicio.html">Proyecto</a>
-        <div class="navbar-nav">
-            <a class="nav-link" href="./paginaInicio.html">Inicio</a>
-            <a class="nav-link" href="./Buscar.html">Buscar médicos</a>
-            <a class="nav-link" href="./Medicos.html">Personal Médico</a>
-            <a class="nav-link" href="./Agendar.html">Agendar Citas</a>
-            <a class="nav-link active" href="./PanelMedico.html">Panel médico</a>
-            <a class="nav-link" href="./Contacto.html">Contactanos</a>
-        </div>
-        <div class="d-flex">
-            <a class="nav-link" href="./IniciarSesion.html">Iniciar Sesión / Registrarse</a>
-        </div>
-    </nav>
-
-
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="mb-3 text-center">
-
-                    <a href="./Agendar.html">
-                        <button id="EditarCita" type="button" class="btn btn-primary w-100">Agendar Cita</button>
-                    </a>
                 </div>
-
                 <div class="container" id="contenedorMedico"></div>
             </div>
         </div>
     </div>
+    <?php include("footer.php") ?>
 
 
     <script src="./js/scriptM.js"></script>

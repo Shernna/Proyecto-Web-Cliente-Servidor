@@ -10,29 +10,32 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="./paginaInicio.html">Citas Médicas</a>
+		<a class="navbar-brand" href="./paginaInicio.php">Citas Médicas</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="./paginaInicio.html">Inicio</a>
+					<a class="nav-link" href="./paginaInicio.php">Inicio</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Buscar.html">Buscar médicos</a>
+					<a class="nav-link" href="./Buscar.php">Buscar médicos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Medicos.html">Personal Médico</a>
+					<a class="nav-link" href="./Medicos.php">Personal Médico</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Agendar.html">Agendar Citas</a>
+					<a class="nav-link" href="./Agendar.php">Agendar Citas</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./Contacto.php">Contáctanos</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./PanelMedico.php">Gestionar Médicos</a>
+				</li>
 			</ul>
-			<a href="./IniciarSesion.html" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
+			<a href="./IniciarSesion.php" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
 		</div>
 	</nav>
 

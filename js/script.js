@@ -1,6 +1,6 @@
 function Volver()
 {
-	window.location.href = "./IniciarSesion.html"
+	window.location.href = "./IniciarSesion.php"
 }
 
 const medicos = [

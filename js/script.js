@@ -68,3 +68,17 @@ function cerrarModal() {
     document.getElementById('resumenModal').style.display = 'none';
     document.getElementById('citaForm').reset();
 }
+
+$('input[type="radio"]').click(function() 
+{
+    if($(this).attr('id') == 'paciente') 
+    {
+        $('#divPaciente').css("display","block");
+        $('#divMedico').css("display","none");
+    }
+    else 
+    {
+        $('#divPaciente').css("display","none");
+        $('#divMedico').css("display","block");
+    }
+});

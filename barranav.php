@@ -37,6 +37,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/mostrar_citas.php">Visualizar citas</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/pacientes.php">Registrar Pacientes</a>
+				</li>
 			</ul>
 			<a href="http://localhost/Proyecto-Web-Cliente-Servidor/IniciarSesion.php" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
 		</div>

@@ -34,6 +34,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./PanelMedico.php">Gestionar Médicos</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./mostrar_citas.php">ver citas</a>
+				</li>
 			</ul>
 			<a href="./IniciarSesion.php" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
 		</div>

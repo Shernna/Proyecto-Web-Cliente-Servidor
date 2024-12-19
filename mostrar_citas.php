@@ -1,3 +1,6 @@
+<?php
+    include("barranav.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Lista de Citas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <?php
-    include("barranav.php");
-    ?>
+    
 </head>
 <body>
     <div class="container mt-5">

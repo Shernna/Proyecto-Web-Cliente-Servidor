@@ -17,25 +17,28 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="./paginaInicio.php">Inicio</a>
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/paginaInicio.php">Inicio</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Buscar.php">Buscar médicos</a>
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/Buscar.php">Buscar médicos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Medicos.php">Personal Médico</a>
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/Medicos.php">Personal Médico</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Agendar.php">Agendar Citas</a>
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/Agendar.php">Agendar Citas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./Contacto.php">Contáctanos</a>
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/Contacto.php">Contáctanos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./PanelMedico.php">Gestionar Médicos</a>
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/PanelMedico.php">Gestionar Médicos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://localhost/Proyecto-Web-Cliente-Servidor/mostrar_citas.php">Visualizar citas</a>
 				</li>
 			</ul>
-			<a href="./IniciarSesion.php" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
+			<a href="http://localhost/Proyecto-Web-Cliente-Servidor/IniciarSesion.php" class="btn btn-outline-light">Iniciar Sesión / Registrarse</a>
 		</div>
 	</nav>
 

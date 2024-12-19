@@ -1,6 +1,21 @@
 <?php
 include("barranav.php");
+require_once "controller/medicoController.php";
+
+$controller = new medicoController();
+$medicos = $controller->listar();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once "controller/medicoController.php";
+    $controller = new medicoController();
+    if ($controller->crear($_POST)) {
+        header('Location: Medicos.php');
+        exit();
+    } else {
+        echo "Error al guardar el médico.";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,9 +31,6 @@ include("barranav.php");
 </head>
 
 <body>
-    <header>
-       
-    </header>
 
     <div class="container mt-4">
         <div id="contenedorTitulo">
@@ -27,55 +39,22 @@ include("barranav.php");
 
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
+                <?php while ($row = $medicos->fetch(PDO::FETCH_ASSOC)) { ?>
 
-                <div id="contenedorMedico">
-                    <h3>Dra. Rachel Cortes</h3>
-                    <p>Odontologia - Medicina</p>
-                    <p>Mi licencia: MED4897 · Colegio de Médicos y Cirujanos de Costa Rica</p>
-                    <h6>Servicios:</h6>
-                    <p>El precio puede variar dependiendo de la condición del paciente, la clínica y el tratamiento.</p>
-                    <p>Consulta: ¢85,000.00</p>
-                    <div class="columna">
-                        <a href="./Agendar.php">Agendar Cita</a>
+                    <div id="contenedorMedico">
+                        <h3>Dr. <?php echo $row['nombre']; ?> <?php echo $row['apellido']; ?></h3>
+                        <p><?php echo $row['especialidad']; ?></p>
+                        <p><?php echo $row['licencia']; ?></p>
+                        <h6><?php echo $row['disponibilidad']; ?></h6>
+                        <p>El precio puede variar dependiendo de la condición del paciente, la clínica y el tratamiento.</p>
+                        <p><?php echo $row['consulta']; ?></p>
+                        <div class="columna">
+                            <a href="./Agendar.php">Agendar Cita</a>
+                        </div>
                     </div>
-                </div>
 
+                <?php } ?>
 
-                <div id="contenedorMedico">
-                    <h3>Dr. Adrian Rojas</h3>
-                    <p>Dermatologia</p>
-                    <p>Mi licencia: MED7885 · Colegio de Médicos y Cirujanos de Costa Rica</p>
-                    <h6>Servicios:</h6>
-                    <p>El precio puede variar dependiendo de la condición del paciente, la clínica y el tratamiento.</p>
-                    <p>Consulta: ¢60,000.00</p>
-                    <div class="columna">
-                        <a href="./Agendar.php">Agendar Cita</a>
-                    </div>
-                </div>
-
-                <div id="contenedorMedico">
-                    <h3>Dra. Shernna Corrales</h3>
-                    <p>Psicologia - Medicina</p>
-                    <p>Mi licencia: MED4897 · Colegio de Médicos y Cirujanos de Costa Rica</p>
-                    <h6>Servicios:</h6>
-                    <p>El precio puede variar dependiendo de la condición del paciente, la clínica y el tratamiento.</p>
-                    <p>Consulta: ¢45,000.00</p>
-                    <div class="columna">
-                        <a href="./Agendar.php">Agendar Cita</a>
-                    </div>
-                </div>
-
-                <div id="contenedorMedico">
-                    <h3>Dr. Alejandro Arguedas</h3>
-                    <p>Pediatria</p>
-                    <p>Mi licencia: MED7885 · Colegio de Médicos y Cirujanos de Costa Rica</p>
-                    <h6>Servicios:</h6>
-                    <p>El precio puede variar dependiendo de la condición del paciente, la clínica y el tratamiento.</p>
-                    <p>Consulta: ¢40,000.00</p>
-                    <div class="columna">
-                        <a href="./Agendar.php">Agendar Cita</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,66 @@
-const medicos = [
+const contenedorMedico = document.getElementById("contenedorMedico");
+
+// Obtener datos de la API
+async function obtenerDatos() {
+    const medicosResponse = await fetch('medicosApi.php?action=medicos');
+    const medicos = await medicosResponse.json();
+
+    const agendasResponse = await fetch('medicosApi.php?action=agendas');
+    const agendas = await agendasResponse.json();
+
+    renderMedicos(medicos, agendas);
+}
+
+function renderMedicos(medicos, agendas) {
+    medicos.forEach(medico => {
+        const medicoDiv = document.createElement("div");
+        medicoDiv.classList.add("container");
+
+        medicoDiv.innerHTML = `
+            <h3>${medico.nombre}</h3>
+            <p>${medico.especialidad.charAt(0).toUpperCase() + medico.especialidad.slice(1)}</p>
+            <p>Ubicación: ${medico.ubicacion.charAt(0).toUpperCase() + medico.ubicacion.slice(1)}</p>
+        `;
+        
+        const citas = agendas[medico.nombre];
+        if (citas && citas.length > 0) {
+            const citasList = document.createElement("ul");
+
+            citas.forEach((cita, index) => {
+                const citaItem = document.createElement("li");
+                citaItem.textContent = `${cita.fecha} - ${cita.nombre} - ${cita.descripcion}`;
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Eliminar';
+                deleteBtn.classList.add('delete-btn');
+                deleteBtn.addEventListener('click', function() {
+                    eliminarCita(medico.nombre, index);
+                    citaItem.remove(); 
+                });
+
+                citaItem.appendChild(deleteBtn);
+                citasList.appendChild(citaItem);
+            });
+
+            const citasTitulo = document.createElement("h6");
+            citasTitulo.textContent = "Lista de Citas:";
+            medicoDiv.appendChild(citasTitulo);
+            medicoDiv.appendChild(citasList);
+        } else {
+            const noCitasMsg = document.createElement("p");
+            noCitasMsg.textContent = "No hay citas disponibles.";
+            medicoDiv.appendChild(noCitasMsg);
+        }
+
+        contenedorMedico.appendChild(medicoDiv);
+    });
+}
+
+obtenerDatos();
+
+
+
+/*const medicos = [
     { nombre: "Dr. Adrian Rojas", especialidad: "dermatologia", ubicacion: "san_jose" },
     { nombre: "Dra. Rachel Cortes", especialidad: "odontologia", ubicacion: "heredia" },
     { nombre: "Dr. Alejandro Arguedas", especialidad: "pediatria", ubicacion: "alajuela" },
@@ -159,5 +221,5 @@ document.getElementById('EditarCita').addEventListener('click', function() {
         mostrarModal("Por favor, completa todos los campos antes de editar la cita.");
     }
 });
-
+*/
 

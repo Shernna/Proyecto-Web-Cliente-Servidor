@@ -1,80 +1,64 @@
-<?php
-include("barranav.php");
-?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-          
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Reservar Cita</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <?php
+    include("barranav.php");
+    ?>
 </head>
-
 <body>
-
-    
     <div class="container mt-4">
-        <form id="citaForm" onsubmit="mostrarResumen(event)">
+        <form id="citaForm" action="procesar_citas.php" method="post" onsubmit="mostrarResumen(event)">
             <div class="mb-3">
-                <label for="identificacion" class="form-label">Número de Identificación:</label>
-                <input type="text" id="identificacion" name="identificacion" class="form-control" required><br><br>
-            </div>
-
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" required><br><br>
-            </div>
-
-            <div class="mb-3">
-                <label for="apellidos" class="form-label">Apellidos:</label>
-                <input type="text" id="apellidos" name="apellidos" class="form-control" required><br><br>
-            </div>
-
-            <div class="mb-3">
-                <label for="edad" class="form-label">Edad:</label>
-                <input type="number" id="edad" name="edad" class="form-control" min="0" required><br><br>
+                <label for="id_paciente" class="form-label">ID Paciente:</label>
+                <input type="number" id="id_paciente" name="id_paciente" class="form-control" required>
             </div>
 
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha de la Cita:</label>
-                <input type="date" id="fecha" name="fecha" class="form-control" required><br><br>
+                <input type="date" id="fecha" name="fecha" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="hora" class="form-label">Hora de la Cita:</label>
+                <input type="time" id="hora" name="hora" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="medico" class="form-label">Seleccionar Médico:</label>
+                <select id="medico" name="medico" class="form-control" required>
+                    <option value="">Seleccionar Médico</option>
+                    <?php
+                    include 'conexion.php'; 
+                    $sql = "SELECT id_medico, especialidad FROM medicos";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['id_medico'] . "'>" . $row['id_medico'] . " - " . $row['especialidad'] . "</option>";
+                        }
+                    }
+                    $conn->close();
+                    ?>
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Reservar Cita</button>
+            
         </form>
     </div>
 
-
-    <div id="resumenModal" class="modal" tabindex="-1" style="display:none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Resumen de la Cita</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p id="resumenCita"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php include("footer.php") ?>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-    <script src="./js/script.js"></script>
 </body>
-
+    <?php
+        include("footer.php");
+    ?>
 </html>

@@ -24,7 +24,7 @@
                                 <tr>
                                     <th>ID Cita</th>
                                     <th>ID Paciente</th>
-                                    <th>ID Médico</th>
+                                    <th>Médico</th>
                                     <th>Fecha</th>
                                     <th>Hora</th>
                                     <th>Estado</th>
@@ -34,14 +34,16 @@
                             <tbody>
                                 <?php
                                 include 'conexion.php'; 
-                                $sql = "SELECT id_cita, id_paciente, id_medico, fecha, hora, estado FROM citas";
+                                $sql = "SELECT c.id_cita, c.id_paciente, CONCAT(m.nombre, ' ', m.apellido) AS nombre_medico, c.fecha, c.hora, c.estado
+                                FROM citas c INNER JOIN medicos m ON c.id_medico = m.id";
+
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
                                         echo "<tr>";
                                         echo "<td>" . $row['id_cita'] . "</td>";
                                         echo "<td>" . $row['id_paciente'] . "</td>";
-                                        echo "<td>" . $row['id_medico'] . "</td>";
+                                        echo "<td>" . $row['nombre_medico'] . "</td>";
                                         echo "<td>" . $row['fecha'] . "</td>";
                                         echo "<td>" . $row['hora'] . "</td>";
                                         echo "<td>" . $row['estado'] . "</td>";
@@ -58,6 +60,7 @@
                                 $conn->close();
                                 ?>
                             </tbody>
+                            
                         </table>
                     </div>
                 </div>

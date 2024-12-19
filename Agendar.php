@@ -35,11 +35,12 @@
                     <option value="">Seleccionar Médico</option>
                     <?php
                     include 'conexion.php'; 
-                    $sql = "SELECT id_medico, especialidad FROM medicos";
+                    $sql = "SELECT id, CONCAT(nombre, ' ', apellido, ' - ', especialidad) AS descripcion FROM medicos";
+
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['id_medico'] . "'>" . $row['id_medico'] . " - " . $row['especialidad'] . "</option>";
+                            echo "<option value='" . $row['id'] . "'>" . $row['descripcion'] . "</option>";
                         }
                     }
                     $conn->close();

@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "proyectowcs";
+$password = "Estrella.21";
+$dbname = "citas_medicas";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
